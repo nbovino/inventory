@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% from 'macros.html' import render_field %}
+
+{% block content %}
+<p>Add Item Type</p>
+<form method="POST" action="" class="form">
+    {{ form1.hidden_tag() }}
+    {% for field in form1 %}
+        {{ render_field(field) }}
+    {% endfor %}
+    <button type="submit">Add Type</button>
+</form>
+    <button><a href="{{ url_for('main_actions') }}">Cancel</a></button>
+
+<p>Add Item Model</p>
+<form method="POST" action="" class="form">
+    {{ form2.hidden_tag() }}
+    {% for field in form2 %}
+        {{ render_field(field) }}
+    {% endfor %}
+    <button type="submit">Add Model</button>
+</form>
+    <button><a href="{{ url_for('main_actions') }}">Cancel</a></button>
+{% endblock %}
